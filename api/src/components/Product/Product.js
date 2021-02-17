@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Axios from "axios"
 import Left from '../layout/left';
-import { Link } from 'react-router-dom';
+import {Link} from "react-router-dom";
 
 class Product extends Component {
     constructor(props){
