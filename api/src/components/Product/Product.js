@@ -59,7 +59,7 @@ class Product extends Component {
                             <div className="choose">
                               <ul className="nav nav-pills nav-justified">
                                 <li><a href><i className="fa fa-plus-square" />Add to wishlist</a></li>
-                                <li><Link to='/Product/details' ><i className="fa fa-plus-square" />Detail</Link></li>
+                                <li><Link to={'/Product/details/' + obj.id} ><i className="fa fa-plus-square" />Detail</Link></li>
                               </ul>
                             </div>
                           </div>

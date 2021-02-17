@@ -21,9 +21,8 @@ import Account from './components/Account/Account';
 import Bloglist1 from './components/Blog1/Bloglist1'
 import Blogdetail1 from './components/Blog1/Blogdetail1';
 import Product from './components/Product/Product';
+import Productdetail from './components/Product/Productdetail';
 import Admin from './components/Admin/Index'
-import Productdetail from './components/Product/Productdetail'
-
 
 ReactDOM.render(
   <div>
@@ -40,7 +39,7 @@ ReactDOM.render(
           <Route path='/Blog/List' component={Bloglist1}/>
           <Route path='/Blog/detail/:id' component={Blogdetail1} />
           <Route path='/Product' component={Product} />
-          <Route path='/Product/details' component={Productdetail} />
+          <Route path='/Product/details/:id' component={Productdetail} />
           <Route path='/Login' component={Login}/>
           <Route path='/Logout' component = {Logout}/>
           <Route path='/Account' component={Account}/>
