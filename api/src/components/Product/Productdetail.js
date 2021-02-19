@@ -5,24 +5,55 @@ import Left from '../layout/left'
 class Productdetail extends Component {
     constructor(props){
         super(props)
+        this.state = {
+          getData: '',
+          img: '',
+          name: '',
+          price: '',
+          detail: '',
+          getImg: '',
+        }
+         this.renderImage = this.renderImage.bind(this)
     }
     componentDidMount(){
       let url = `http://localhost/laravel/public/api/product/detail/`
       Axios.get(url + this.props.match.params.id)
       .then(res =>{
-          console.log(res)
+          this.setState({
+            getData: res.data,
+            getImg: res.data.data.image
+          })
          
       })
       .catch(error => console.log(error));
     }
+    renderImage(){
+      let image = [];
+      let test = "";
+      if(Object.keys(this.state.getData).length > 0){
+        return Object.keys(this.state.getData).map((obj,i)=> {
+          test = JSON.stringify(this.state.getData[obj]['image'])
+          // test = JSON.parse('aaa')
+          console.log(test)
+          console.log('retrievedObject: ', JSON.parse(test));
+          return(
+            <>
+             
+            </>
+          )
+        })
+      }
+  
+    }
     fetchData(){
-      return(
 
+      return(
+            
               <div className="col-sm-9 padding-right">
                 <div className="product-details">{/*product-details*/}
                   <div className="col-sm-5">
                     <div className="view-product">
-                      <img src="images/product-details/1.jpg" alt="" />
+                      {this.renderImage()}
                       <a href="images/product-details/1.jpg" rel="prettyPhoto"><h3>ZOOM</h3></a>
                     </div>
                     <div id="similar-product" className="carousel slide" data-ride="carousel">
